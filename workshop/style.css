@@ -46,7 +46,7 @@ h3 {
   position: relative;
   font-family: monospace;
   font-size: 80%;
-  line-height: 100%;
+  line-height: 105%;
   counter-reset: linenumbers;
 }
 
@@ -82,6 +82,16 @@ h3 {
   text-align: center;
 }
 
+/* Features slide */
+#features img {
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+#features li:before {
+  content: '';
+}
+
 /* Code example slide */
 #code img {
   float: left;
@@ -95,7 +105,7 @@ h3 {
   background: white;
   margin: 10px;
   padding: 10px;
-  height: 130px;
+  height: 135px;
 }
 
 #code .highlight pre > span:before {
@@ -104,11 +114,31 @@ h3 {
 
 /* Demo Slide */
 #demo iframe {
+  box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px;
   float: left;
+  background: white;
 }
 
 #demo iframe:last-of-type {
   float: right;
+}
+
+/* Proven, scalable, powerful */
+#scalable ul {
+  font-size: 90%;
+  padding-right: 100px;
+}
+
+#scalable span {
+  font: 'Open Sans';
+  font-weight: bolder;
+  color: #d21e2a;
+}
+
+#scalable img {
+  position: absolute;
+  right: 0;
+  top: 30%;
 }
 
 #Cover img {
