@@ -67,6 +67,13 @@ h3 {
   user-select: none;
 }
 
+video {
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  height: 83%;
+}
+
 /* Progress Background */
 .full .progress div {
   background: #d21e2a;
