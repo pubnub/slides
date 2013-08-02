@@ -42,6 +42,10 @@ h3 {
   background: #d21e2a;
 }
 
+.full .progress {
+  bottom: 10px;
+}
+
 /* Real time network slide */
 #real-time-network p, #real-time-network h2 {
   color: #555;
