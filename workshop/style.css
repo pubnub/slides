@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  font-family: Helvetica, Gill Sans, sans-serif;
+  font-family: 'Open Sans Light', Helvetica, Gill Sans, sans-serif;
   color: #555;
 }
 
@@ -37,6 +37,36 @@ h3 {
   font-weight: bold;
 }
 
+.slide pre {
+  white-space: pre;
+}
+
+.highlight {
+  padding-left: 20px;
+  position: relative;
+  font-family: monospace;
+  font-size: 80%;
+  line-height: 100%;
+  counter-reset: linenumbers;
+}
+
+.highlight pre > span:before {
+  font-size: .9em;
+  color: #aaa;
+  content: counter(linenumbers);
+  counter-increment: linenumbers;
+  left: -3.2ex;
+  position: absolute;
+  text-align: right;
+  width: 2.5ex;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* Progress Background */
 .full .progress div {
   background: #d21e2a;
@@ -57,6 +87,19 @@ h3 {
   float: left;
   margin-top: 80px;
   margin-right: 10px;
+}
+
+#code .highlight {
+  box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px;
+  font-size: 18px;
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  height: 130px;
+}
+
+#code .highlight pre > span:before {
+  content: '';
 }
 
 /* Demo Slide */
