@@ -1,6 +1,40 @@
+/* Global Styles */
 body {
   font-family: Helvetica, Gill Sans, sans-serif;
   color: #555;
+}
+
+.slide {
+  color: #555;
+}
+
+.grid6 {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.left {
+  float: left;
+}
+
+.half-width {
+  display: inline-block;
+  width: 50%;
+  margin: 0 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2 span, p span {
+  color: #d21e2a;
+}
+
+h3 {
+  font-size: 110%;
+  font-weight: bold;
 }
 
 /* Progress Background */
@@ -14,15 +48,20 @@ body {
   text-align: center;
 }
 
-#real-time-network span {
-  color: #d21e2a;
-}
-
 /* Code example slide */
 #code img {
   float: left;
   margin-top: 80px;
   margin-right: 10px;
+}
+
+/* Demo Slide */
+#demo iframe {
+  float: left;
+}
+
+#demo iframe:last-of-type {
+  float: right;
 }
 
 #Cover img {
@@ -64,6 +103,11 @@ body {
   left: 0;
   width: 100%;
   height: 200px;
+}
+
+#Picture img {
+  width: 100%;
+  height: auto
 }
 
 .slide {
