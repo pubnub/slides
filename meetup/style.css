@@ -210,24 +210,34 @@ video {
 }
 
 /* Slide transitions */
+html {
+  background: black;
+}
+
 .full .slide {
     -webkit-transition-duration:0.5s;
     -moz-transition-duration:0.5s;
     -ms-transition-duration:0.5s;
     -o-transition-duration:0.5s;
     transition-duration:0.5s;
-    -webkit-transition-property:left;
-    -moz-transition-property:left;
-    -ms-transition-property:left;
-    -o-transition-property:left;
-    transition-property:left;
-    margin-left: 0;
+    -webkit-transition-property:left, scale;
+    -moz-transition-property:left, scale;
+    -ms-transition-property:left, scale;
+    -o-transition-property:left, scale;
+    transition-property:left, scale;
+    margin-left: 0 !important;
     left: -150%;
-    }
+    -webkit-transform: scale(0.7);
+}
+
+.full .slide.visited {
+  left: 0;
+  z-index: -1;
+  -webkit-transform: scale(0.5);
+}
+
 .full .slide.active {
     margin: 0;
     left: 0;
-    }
-.slide.passed {
-    
-    }
+    -webkit-transform: scale(1);
+}
