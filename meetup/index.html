@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>PubNub Real-Time Network</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/bright/styles/screen.css" />
+	<link rel="stylesheet" href="github.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>PubNub and You</h1>
+		<p>Dan Ristic - Developer Evangelist</p>
+	</header>
+
+	<section class="slide cover" id="Cover"><div>
+		<div class="title">
+			<h2><img src="pictures/logo.png" alt="Logo" width="293" height="78" /></h2>
+			<p>Building Real-Time Apps that Scale Globally</p>
+		</div>
+		<img src="pictures/pubnub-cover.jpg" alt="">
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>The Web is Becoming Increasingly Real-Time</h2>
+		<ul class="left half-width">
+			<li>Audience Voting</li>
+			<li>Multiplayer Game Control</li>
+			<li>Website Tracking</li>
+			<li>Teacher/Student Feedback</li>
+			<li>VoIP Signaling</li>
+		</ul>
+		<ul class="left half-width">
+			<li>Remote Tech Support</li>
+			<li>Document Collaboration</li>
+			<li>Second Screen Advertising</li>
+			<li>Taxi Dispatch Control</li>
+			<li>Home Automation</li>
+		</ul>
+
+		<footer>
+			How many of you are building interactive applications?
+			The web is becoming more and more advanced each day.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="devices"><div>
+		<h2>We Have to Support More and More Devices Each Day</h2>
+		<img src="pictures/all-desktop.png" width="400" height="80" alt="Desktop Browsers" />
+		<img src="pictures/android.png" width="100" height="117" alt="Desktop Browsers" />
+		<img src="pictures/ios.png" width="250" height="87" alt="Desktop Browsers" />
+		<img src="pictures/raspi.png" width="120" height="144" alt="Desktop Browsers" />
+		<img src="pictures/python.png" width="150" height="50" alt="Desktop Browsers" />
+		<img src="pictures/nodejs-dark.png" width="212" height="114" alt="Desktop Browsers" />
+		<img src="pictures/unity.png" width="250" height="93" alt="Desktop Browsers" />
+
+		<footer>
+			We not only have to build more complex apps but also ones that support more and more devices.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="real-time-network"><div>
+		<h2><span>PubNub</span> is a Globally Distributed <span>Real-Time Network</span></h2>
+		<p>The <span>core building-blocks</span> needed to build and scale <span>real-time apps</span> dramatically <span>reducing<span> the <span>cost, complexity, and time</span> to deliver large-scale real-time experiences.</p>
+
+		<footer>
+			We at PubNub want to solve this issue for developers by building the core building blocks for real time applications.
+		</footer>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>PubNub Data Push</h2>
+		<div class="grid6">
+			<h3 class="text-center">PubNub Unicast</h3>
+			<img src="pictures/unicast.png" alt="Unicast" width="400" height="191" class="left" />
+		</div>
+		<div class="grid6">
+			<h3 class="text-center">PubNub Broadcast</h3>
+			<img src="pictures/broadcast.png" alt="Broadcast" width="400" height="191" class="left" />
+		</div>
+
+		<footer>
+			What does this solution look like? Well the best solution is something that can support both unicast and broadcast systems.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="features"><div>
+		<h2>PubNub Features</h2>
+		<ul class="left">
+			<li><img src="pictures/pubnub-channel-presence.png" width="60" height="60" />Presence - Instant Notifications of User’s Online/Offline Status</li>
+			<li><img src="pictures/pubnub-real-time-analytics.png" width="60" height="60" />Analytics - See Your Users in Real-Time</li>
+			<li><img src="pictures/pubnub-message-history.png" width="60" height="60" />Storage & Playback - Data Streams With Retrieval and Playback</li>
+			<li><img src="pictures/ico-security.png" width="60" height="60" />Security - Encryption From End to End</li>
+			<li><img src="pictures/mobile-push-icon.png" width="60" height="60" />Mobile - Reach Consumers Even With Phones in Their Pockets</li>
+		</ul>
+
+		<footer>
+			Many devs also forget about extras. We also wanted to support extras like presence, analytics, storage and playback, security, and mobile.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="demo"><div>
+		<h2>Experience the Speed of PubNub For Yourself</h2>
+		<iframe src="http://pubnub.com/games/mouse-speak-1.1/index.html" width="306" height="198" border="0" frameborder="0" scrolling="no" style="border:none;width:306px;height:198px;"></iframe>
+    <iframe src="http://pubnub.com/games/mouse-speak-1.1/index.html" width="306" height="198" border="0" frameborder="0" scrolling="no" style="border:none;width:306px;height:198px;"></iframe>
+
+    <footer>
+    	Let's check out an example of this in action.
+  	</footer>
+  </div></section>
+
+	<section class="slide" id="code"><div>
+		<h2>PubNub Data Channels</h2>
+		<div class="grid6">
+<div class="highlight"><pre><span id="line-1"><span class="c1">// Listen for events</span>
+</span><span id="line-2"><span class="nx">PUBNUB</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
+</span><span id="line-3">  <span class="nx">channel</span><span class="o">:</span> <span class="s2">&quot;my_channel&quot;</span><span class="p">,</span>
+</span><span id="line-4">  <span class="nx">message</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-5">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</span><span id="line-6">  <span class="p">}</span>
+</span><span id="line-7"><span class="p">});</span>
+</span></pre></div>
+		</div>
+
+		<div class="grid6">
+<div class="highlight"><pre><span id="line-1"><span class="c1">// Send Events</span>
+</span><span id="line-2"><span class="nx">PUBNUB</span><span class="p">.</span><span class="nx">publish</span><span class="p">({</span>
+</span><span id="line-3">  <span class="nx">channel</span><span class="o">:</span> <span class="s2">&quot;my_channel&quot;</span><span class="p">,</span>
+</span><span id="line-4">  <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="line-5"><span class="p">});</span>
+</span></pre></div>
+		</div>
+
+		<footer>
+			And now how is this built on our system? It is simple: pub and sub. We do the rest!
+		</footer>
+	</div></section>
+
+	<!-- Need to figure out a better place for this -->
+	<!-- <section class="slide" id="Picture">
+		<video controls>
+			<source src="video/pubnub-phone.mp4" type="video/mp4; codecs='avc1.42E01E,mp4a.40.2'" />
+			<source src="video/pubnub-phone.webm" type="video/webm; codecs='vp8, vorbis'" />
+			<source src="video/pubnub-phone.ogv" type="video/ogg; codecs='theora, vorbis'" />
+			Video tag not supported. Download the video <a href="video/pubnub-phone.webm">Here</a>
+		</video>
+	</section> -->
+
+	<section class="slide"><div>
+		<h2>We Love Open Source</h2>
+		<div class="grid6">
+			<img src="pictures/Octocat.png" width="300" height="249" alt="Octocat" />
+			<h3><a href="http://github.com/pubnub">http://github.com/pubnub</a></h3>
+		</div>
+		<div class="grid6">
+			<h3>Demos and Examples</h3>
+			<ul>
+				<li><a target="_blank" href="http://pubnub-phone.s3.amazonaws.com/index.html">Phone Ring</a></li>
+				<li><a target="_blank" href="http://pubnub-demo.s3.amazonaws.com/mouse-speak/index.htm">Mouse Speak</a></li>
+				<li><a target="_blank" href="http://gencar.co/">Genetic Car Algorithm</a></li>
+				<li><a target="_blank" href="http://dristic.github.io/pub-messenger/">PubNub Messenger</a></li>
+				<li><a target="_blank" href="http://pubnub.github.io/rtc-pubnub-fileshare/#">WebRTC File Sharing</a></li>
+				<li><a target="_blank" href="http://parasyte.github.io/melonJS/examples/platformer/">MelonJS Multiplayer Gaming</a></li>
+			</ul>
+		</div>
+
+		<footer>
+			We love open source and want you guys to check out great examples of PubNub.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="scalable"><div>
+		<h2>Proven, Scalable, Powerful</h2>
+		<img src="pictures/globe.png" width="188" height="340" alt="Globe" />
+		<ul>
+			<li><span>12 data centers</span> -  Worldwide replication for performance and reliability  </li>
+			<li><span>Premium SLA</span> - Guaranteed 99.999% uptime contract and 7x24 phone support</li>
+			<li><span>Scalable</span> - Average over 20,000 messages/second, with peaks > 2,000,000/second  </li>
+			<li><span>Runs Everywhere</span> - Runs on every mobile, browser, and desktop in use today</li>
+		</ul>
+
+		<footer>
+			This is usable in production today. No server setups, load balancing, etc.
+		</footer>
+	</div></section>
+
+  <section class="slide"><div>
+  	<h2>Getting Started</h2>
+  	<ol>
+  		<li>Sign up for a free account at <a target="_blank" href="http://pubnub.com/free-trial">http://pubnub.com/free-trial</a></li>
+  		<li class="next">Start slow with <a target="_blank" href="http://pubnub.com/console">Dev Console V2</a> (http://pubnub.com/console)</li>
+  		<li class="next">Check out our tutorials in our <a target="_blank" href="http://pubnub.com/devcenter">Devcenter</a> (http://pubnub.com/devcenter)</li>
+  		<li class="next">Find our repositories on <a target="_blank" href="http://github.com/pubnub">GitHub</a> (http://github.com/pubnub)</li>
+  	</ol>
+
+  	<footer>
+  		How do I get started today? Sign up for an account. We offer a free sandbox tier and free trials of all our features. From there we have a console, dev center, and open source projects to help you out.
+  	</footer>
+  </div></section>
+
+  <section class="slide"><div>
+  	<h2>Questions?</h2>
+  	<ul>
+			<li>Thanks for listening!</li>
+			<li>Find me on the web: <a href="http://danristic.com">http://danristic.com</a></li>
+  		<li>Find me on GitHub: <a href="http://github.com/dristic">http://github.com/dristic</a></li>
+  		<li>Find me on Twitter: <a href="http://twitter.com/dristic101">@dristic101</a></li>
+  		<li>E-Mail me at: <a href="mailto:danr@pubnub.com">danr@pubnub.com</a></li>
+  		<li>View these slides at: <a href="http://pubnub.github.io/slides/meetup/">http://pubnub.github.io/slides/meetup/</a></li>
+  	</ul>
+  </div></section>
+
+	<p class="badge"><a href="https://github.com/pubnub">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+
+	<!-- Copyright © 2013 PubNub Inc. -->
+</body>
+</html>
