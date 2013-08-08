@@ -219,57 +219,6 @@
 		-->
 	<div class="progress"><div></div></div>
 	<script src="shower/shower.min.js"></script>
-	<script>
-	var slides = document.querySelectorAll('section.slide');
-
-function applyTransform(transform) {
-    document.body.style.WebkitTransform = transform;
-    document.body.style.MozTransform = transform;
-    document.body.style.msTransform = transform;
-    document.body.style.OTransform = transform;
-    document.body.style.transform = transform;
-}
-
-function getTransform() {
-    var denominator = Math.max(
-        document.body.clientWidth / window.innerWidth,
-        document.body.clientHeight / window.innerHeight
-    );
-    return 'scale(' + (1 / denominator) + ')';
-}
-
-document.addEventListener('keydown', function (e) {
-    if (e.altKey || e.ctrlKey || e.metaKey) return;
-    var current = document.querySelector('section.active'),
-        prev = current.previousElementSibling,
-        next = current.nextElementSibling;
-    switch (e.which) {
-        case 39: // Right
-                if(next && next.classList.contains('slide')) {
-                    current.classList.remove('current');
-                    current.classList.add('passed');
-                    next.classList.add('current');
-                }
-        break;
-        case 37: // Left
-                if(prev && prev.classList.contains('slide')) {
-                    current.classList.remove('current');
-                    prev.classList.remove('passed');
-                    prev.classList.add('current');
-                }
-        break;
-    }
-    e.preventDefault();
-}, false);
-
-window.addEventListener('resize', function (e) {
-    applyTransform(getTransform());
-}, false);
-
-window.addEventListener('DOMContentLoaded', function () {
-    applyTransform(getTransform());
-}, false);
-</script>
 
 	<!-- Copyright © 2013 PubNub Inc. -->
 </body>
