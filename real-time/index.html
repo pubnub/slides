@@ -45,11 +45,8 @@
 		</div>
 	</div></section>
 
-	<section class="slide"><div>
-		<h2>The Reality of Real-Time</h2>
-		<p>
-			Most apps today are not real-time and the ones that are have paid $10m+ for their real-time infrustructure.
-		</p>
+	<section class="slide" id="examples"><div>
+		<h2>Examples of Real-Time Technology</h2>
 		<div>
 			<img src="pictures/twitter-bird-light-bgs.png" width="100" height="100" alt="Twitter Bird" />
 			<img src="pictures/Facebook_Logo.png" width="200" height="75" alt="Facebook" />
@@ -57,44 +54,21 @@
 			<img src="pictures/world-of-warcraft-logo.png" width="150" height="85.34" alt="World of Warcraft" />
 			<img src="pictures/google-drive.png" width="100" height="100" alt="Google Drive" />
 		</div>
+		<p class="next">
+			They all have one thing in common...<br /><span class="next">They all paid $10m+ for their real-time infrustructure</span>
+		</p>
 	</div></section>
 
-	<section class="slide"><div>
-		<h2>We Are Still Becoming Increasingly Real-Time</h2>
-		<ul class="left half-width">
-			<li>Audience Voting</li>
-			<li>Multiplayer Game Control</li>
-			<li>Website Tracking</li>
-			<li>Teacher/Student Feedback</li>
-			<li>VoIP Signaling</li>
-		</ul>
-		<ul class="left half-width">
-			<li>Remote Tech Support</li>
-			<li>Document Collaboration</li>
-			<li>Second Screen Advertising</li>
-			<li>Taxi Dispatch Control</li>
-			<li>Home Automation</li>
-		</ul>
-
-		<footer>
-			How many of you are building interactive applications?
-			The web is becoming more and more advanced each day.
-		</footer>
-	</div></section>
-
-	<section class="slide" id="devices"><div>
-		<h2>We Have to Support More and More Devices Each Day</h2>
-		<img src="pictures/all-desktop.png" width="400" height="80" alt="Desktop Browsers" />
-		<img src="pictures/android.png" width="100" height="117" alt="Desktop Browsers" />
-		<img src="pictures/ios.png" width="250" height="87" alt="Desktop Browsers" />
-		<img src="pictures/raspi.png" width="120" height="144" alt="Desktop Browsers" />
-		<img src="pictures/python.png" width="150" height="50" alt="Desktop Browsers" />
-		<img src="pictures/nodejs-dark.png" width="212" height="114" alt="Desktop Browsers" />
-		<img src="pictures/unity.png" width="250" height="93" alt="Desktop Browsers" />
-
-		<footer>
-			We not only have to build more complex apps but also ones that support more and more devices.
-		</footer>
+	<section class="slide" id="trouble"><div>
+		<h2>The Two Challenges of Real-Time</h2>
+		<div class="next">
+			<h3>25% Development</h3>
+			Device support, network protocols, real-time features
+		</div>
+		<div class="next larger">
+			<h3>75% Deployment & Scaling</h3>
+			Network topology, firewalls, load testing, security, redundancy
+		</div>
 	</div></section>
 
 	<section class="slide" id="real-time-network"><div>
@@ -137,6 +111,29 @@
 		</footer>
 	</div></section>
 
+	<section class="slide"><div>
+		<h2>Amazing Things Being Built Today On PubNub</h2>
+		<ul class="left half-width">
+			<li>Audience Voting</li>
+			<li>Multiplayer Game Control</li>
+			<li>Website Tracking</li>
+			<li>Teacher/Student Feedback</li>
+			<li>VoIP Signaling</li>
+		</ul>
+		<ul class="left half-width">
+			<li>Remote Tech Support</li>
+			<li>Document Collaboration</li>
+			<li>Second Screen Advertising</li>
+			<li>Taxi Dispatch Control</li>
+			<li>Home Automation</li>
+		</ul>
+
+		<footer>
+			How many of you are building interactive applications?
+			The web is becoming more and more advanced each day.
+		</footer>
+	</div></section>
+
 	<section class="slide" id="demo"><div>
 		<h2>Experience the Speed of PubNub For Yourself</h2>
 		<iframe src="http://pubnub.com/games/mouse-speak-1.1/index.html" width="306" height="198" border="0" frameborder="0" scrolling="no" style="border:none;width:306px;height:198px;"></iframe>
@@ -148,7 +145,7 @@
   </div></section>
 
 	<section class="slide" id="code"><div>
-		<h2>PubNub Data Channels</h2>
+		<h2>Easy to Use</h2>
 		<div class="grid6">
 <div class="highlight"><pre><span id="line-1"><span class="c1">// Listen for events</span>
 </span><span id="line-2"><span class="nx">PUBNUB</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">({</span>
@@ -174,6 +171,21 @@
 		</footer>
 	</div></section>
 
+	<section class="slide" id="devices"><div>
+		<h2>Works Everywhere</h2>
+		<img src="pictures/all-desktop.png" width="400" height="80" alt="Desktop Browsers" />
+		<img src="pictures/android.png" width="100" height="117" alt="Desktop Browsers" />
+		<img src="pictures/ios.png" width="250" height="87" alt="Desktop Browsers" />
+		<img src="pictures/raspi.png" width="120" height="144" alt="Desktop Browsers" />
+		<img src="pictures/python.png" width="150" height="50" alt="Desktop Browsers" />
+		<img src="pictures/nodejs-dark.png" width="212" height="114" alt="Desktop Browsers" />
+		<img src="pictures/unity.png" width="250" height="93" alt="Desktop Browsers" />
+
+		<footer>
+			This simple code solution works the same on all of our devices.
+		</footer>
+	</div></section>
+
 	<!-- Need to figure out a better place for this -->
 	<!-- <section class="slide" id="Picture">
 		<video controls>
@@ -185,7 +197,7 @@
 	</section> -->
 
 	<section class="slide"><div>
-		<h2>We Love Open Source</h2>
+		<h2>Always Open Source</h2>
 		<div class="grid6">
 			<img src="pictures/Octocat.png" width="300" height="249" alt="Octocat" />
 			<h3><a href="http://github.com/pubnub">http://github.com/pubnub</a></h3>

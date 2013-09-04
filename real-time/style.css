@@ -411,36 +411,36 @@ fadeIn
 
 @keyframes fadeIn {
   0% {
-    transform: scale(0);
-    opacity: 0.0;   
+    /*transform: scale(0);*/
+    opacity: 0.0;
   }
   60% {
-    transform: scale(1.1);  
+    /*transform: scale(1.1);  */
   }
   80% {
-    transform: scale(0.9);
+    /*transform: scale(0.9);*/
     opacity: 1; 
   } 
   100% {
-    transform: scale(1);
+    /*transform: scale(1);*/
     opacity: 1; 
   }   
 }
 
 @-webkit-keyframes fadeIn {
   0% {
-    -webkit-transform: scale(0);
+    /*-webkit-transform: scale(0);*/
     opacity: 0.0;   
   }
   60% {
-    -webkit-transform: scale(1.1);
+    /*-webkit-transform: scale(1.1);*/
   }
   80% {
-    -webkit-transform: scale(0.9);
+    /*-webkit-transform: scale(0.9);*/
     opacity: 1; 
   } 
   100% {
-    -webkit-transform: scale(1);
+    /*-webkit-transform: scale(1);*/
     opacity: 1; 
   }   
 }
@@ -1353,9 +1353,46 @@ video {
   -webkit-animation-name: expandUp;
   animation-duration: 1s; 
   -webkit-animation-duration: 1s;
-  animation-timing-function: ease;  
+  animation-timing-function: ease;
   -webkit-animation-timing-function: ease;
-  visibility: visible !important; 
+  visibility: visible !important;
+}
+
+#examples .active {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+#trouble .active {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+#trouble div.next {
+  display: block;
+  border: 1px solid rgba(150, 150, 150, 0.3);
+  box-shadow: #000 1px 1px 4px;
+  background: white;
+  border-radius: 10px;
+  height: 112px;
+  box-sizing: border-box;
+  padding: 8px;
+  padding-left: 10px;
+}
+
+#trouble div.larger {
+  height: 200px;
+  margin-top: 20px;
 }
 
 .slide {
