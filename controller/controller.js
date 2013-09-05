@@ -43,4 +43,12 @@
       message: message
     });
   });
+
+  pubKey.addEventListener("change", function (event) {
+    localStorage["publish-key"] = pubKey.value;
+  });
+
+  if (localStorage["publish-key"]) {
+    pubKey.value = localStorage["publish-key"];
+  }
 })();
