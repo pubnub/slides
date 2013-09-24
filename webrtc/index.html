@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>PubNub Real-Time Network</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/bright/styles/screen.css" />
+	<link rel="stylesheet" href="github.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>WebRTC Data Channel</h1>
+		<p>Dan Ristic - Developer Evangelist</p>
+	</header>
+
+	<section class="slide cover" id="Cover"><div>
+		<div class="title">
+			<h2>WebRTC Data Channel</h2>
+			<p>High Performance Peer to Peer Data</p>
+		</div>
+		<img src="pictures/pubnub-cover.jpg" alt="">
+	</div></section>
+
+	<section class="slide" id="what-is-real-time"><div>
+		<h2>What the Heck is Real-Time?</h2>
+		<img src="pictures/google-earth.jpg" width="400" height="342" alt="Google Earth" />
+		<p class="next expand-up">
+			"But why aren't these <b>live</b> pictures of the earth?"
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>There is Something Fundamental About Real-Time</h2>
+		<div style="float: left; margin-top: 100px; width: 60%;">
+			<h3 class="next fade-in">
+				How long is real-time for your users?
+			</h3>
+		</div>
+		<div style="float: right">
+			<div class="next fade-in box" style="margin-top: 71px; margin-right: 73px; font-size: 40px;">
+				300 ms
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide" id="real-time-network"><div>
+		<h2 style="margin-top: 50px">The WebRTC Data Channel is a High Performance, Low Latency Connection to Other Browsers</h2>
+		<p>
+
+			<div class="box">Browser A</div>
+			<div id="data-line"></div>
+			<div class="box">Browser B</div>
+
+			<div id="data-packet"></div>
+		</p>
+
+		<footer>
+			We at PubNub want to solve this issue for developers by building the core building blocks for real time applications.
+		</footer>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Capabilities</h2>
+		<p>Allows for sending of ArrayBuffers, Blobs, and Strings</p>
+		<p>Works in reliable (TCP) or unreliable (UDP) mode</p>
+
+		<footer>
+			What does this solution look like? Well the best solution is something that can support both unicast and broadcast systems.
+		</footer>
+	</div></section>
+
+	<!-- <section class="slide" id="features"><div>
+		<h2>PubNub Features</h2>
+		<ul class="left">
+			<li><img src="pictures/pubnub-channel-presence.png" width="60" height="60" />Presence - Instant Notifications of User’s Online/Offline Status</li>
+			<li><img src="pictures/pubnub-real-time-analytics.png" width="60" height="60" />Analytics - See Your Users in Real-Time</li>
+			<li><img src="pictures/pubnub-message-history.png" width="60" height="60" />Storage & Playback - Data Streams With Retrieval and Playback</li>
+			<li><img src="pictures/ico-security.png" width="60" height="60" />Security - Encryption From End to End</li>
+			<li><img src="pictures/mobile-push-icon.png" width="60" height="60" />Mobile - Reach Consumers Even With Phones in Their Pockets</li>
+		</ul>
+
+		<footer>
+			Many devs also forget about extras. We also wanted to support extras like presence, analytics, storage and playback, security, and mobile.
+		</footer>
+	</div></section> -->
+
+	<!-- <section class="slide"><div>
+		<h2>Amazing Things Being Built Today On PubNub</h2>
+		<ul class="left half-width">
+			<li>Audience Voting</li>
+			<li>Multiplayer Game Control</li>
+			<li>Website Tracking</li>
+			<li>Teacher/Student Feedback</li>
+			<li>VoIP Signaling</li>
+		</ul>
+		<ul class="left half-width">
+			<li>Remote Tech Support</li>
+			<li>Document Collaboration</li>
+			<li>Second Screen Advertising</li>
+			<li>Taxi Dispatch Control</li>
+			<li>Home Automation</li>
+		</ul>
+
+		<footer>
+			How many of you are building interactive applications?
+			The web is becoming more and more advanced each day.
+		</footer>
+	</div></section> -->
+
+	<section class="slide shout" id="demo"><div>
+		<h2>Demo</h2>
+
+    <footer>
+    	Let's check out an example of this in action.
+  	</footer>
+  </div></section>
+
+	<section class="slide" id="code"><div>
+		<h2>How Does it Work?</h2>
+		<div class="grid6">
+			pc.createDataChannel()
+		</div>
+
+		<footer>
+			And now how is this built on our system? It is simple: pub and sub. We do the rest!
+		</footer>
+	</div></section>
+
+	<section class="slide" id="devices"><div>
+		<h2>Is it Ready?</h2>
+		<ul>
+			<li>Ready for Chrome and Firefox</li>
+			<li>Ready for Android Chrome and Firefox</li>
+			<li>Still working on cross browser</li>
+			<li>IE, Safari, and Opera still unknown</li>
+		</ul>
+
+		<footer>
+			This simple code solution works the same on all of our devices.
+		</footer>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Security</h2>
+		<p>
+			Always encrypted. Biggest threat is your users
+		</p>
+
+		<footer>
+			We love open source and want you guys to check out great examples of PubNub.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="scalable"><div>
+		<h2>Other Pitfalls</h2>
+		<p>Not "Serverless". Need other supporting technology.</p>
+		<p>File sizes might be an issue</p>
+
+		<footer>
+			This is usable in production today. No server setups, load balancing, etc.
+		</footer>
+	</div></section>
+
+  <section class="slide"><div>
+  	<h2>Great Examples</h2>
+  	<ul>
+  		<li>File Sharing - PubShare</li>
+  		<li>Games - Banana Bread</li>
+  	</ul>
+
+  	<footer>
+  		How do I get started today? Sign up for an account. We offer a free sandbox tier and free trials of all our features. From there we have a console, dev center, and open source projects to help you out.
+  	</footer>
+  </div></section>
+
+  <section class="slide shout"><div>
+  	<h2>Skynet</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>New Age of Computing</h2>
+		<p>Going from server-client to server-client-client</p>
+	</div></section>
+
+  <section class="slide"><div>
+  	<h2>Questions?</h2>
+  	<ul>
+		<li>Thanks for listening!</li>
+		<li>Find me on the web: <a href="http://danristic.com">http://danristic.com</a></li>
+  		<li>Find me on GitHub: <a href="http://github.com/dristic">http://github.com/dristic</a></li>
+  		<li>Find me on Twitter: <a href="http://twitter.com/dristic101">@dristic101</a></li>
+  		<li>E-Mail me at: <a href="mailto:danr@pubnub.com">danr@pubnub.com</a></li>
+  		<li>View these slides at: <a href="http://pubnub.github.io/slides/real-time/">http://pubnub.github.io/slides/real-time/</a></li>
+  	</ul>
+  </div></section>
+
+	<p class="badge"><a href="https://github.com/pubnub">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+	<script src="controller.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+	    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	    e.src='//www.google-analytics.com/analytics.js';
+	    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	    ga('create','UA-41019038-2');ga('send','pageview');
+	</script>
+
+	<!-- Copyright © 2013 PubNub Inc. -->
+</body>
+</html>
