@@ -1,3 +1,2 @@
 all:
-	pygmentize -O linespans='line' -o code/pub.html code/pub.js
-	pygmentize -O linespans='line' -o code/sub.html code/sub.js
+	pygmentize -O linespans='line' -o code/data_channel.html code/data_channel.js

@@ -1131,6 +1131,10 @@ body {
   color: #555;
 }
 
+body.list {
+  background: #CCC;
+}
+
 .slide {
   color: #555;
   /*background: url(pictures/bg-texture2.png);*/
@@ -1243,7 +1247,6 @@ video {
 }
 
 #code .highlight {
-  box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px;
   font-size: 18px;
   background: white;
   margin: 10px;
@@ -1261,14 +1264,13 @@ video {
 }
 
 /* Demo Slide */
-#demo iframe {
-  box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px;
-  float: left;
+#demo {
   background: white;
 }
 
-#demo iframe:last-of-type {
-  float: right;
+#demo iframe {
+  background: white;
+  height: 75%;
 }
 
 /* Proven, scalable, powerful */
@@ -1328,6 +1330,12 @@ video {
   left: 0;
   width: 100%;
   height: 200px;
+}
+
+/* Skynet Background */
+#skynet {
+  background: url(pictures/Skynet-terminator.jpg);
+  background-size: cover;
 }
 
 #Picture img {

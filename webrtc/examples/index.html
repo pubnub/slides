@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <title>WebRTC + PubNub Example</title>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <input id="connect" class="btn btn-default" type="button" value="Connect" />
+
+        <br />
+        <br />
+
+        <input type="text" id="input" placeholder="Type Message Here" disabled="disabled" />
+        <input id="send" class="btn btn-default" type="button" value="Send" disabled="disabled" />
+
+        <br />
+        <br />
+
+        <div id="response" style="max-height: 250px; display: block; overflow: auto;">
+          [Responses sent across the WebRTC Data Channel will show up here]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="http://cdn.pubnub.com/pubnub.js"></script>
+  <script type="text/javascript" src="webrtc-beta-pubnub.js"></script>
+  <script type="text/javascript">
+    // Grab a reference to all of our elements
+    var connectButton = document.querySelector('#connect'),
+        sendButton = document.querySelector('#send'),
+        inputField = document.querySelector('#input'),
+        responseBox = document.querySelector('#response');
+
+    // Create first "user"
+    var userA = PUBNUB.uuid();
+    var pubnubA = PUBNUB.init({
+      publish_key: 'pub-c-e26bd37f-0e9b-49db-a2d0-3ce7dada8563',
+      subscribe_key: 'sub-c-4860a7f8-ced1-11e2-b70f-02ee2ddab7fe',
+      uuid: userA
+    });
+
+    // Create second "user"
+    var userB = PUBNUB.uuid();
+    var pubnubB = PUBNUB.init({
+      publish_key: 'pub-c-e26bd37f-0e9b-49db-a2d0-3ce7dada8563',
+      subscribe_key: 'sub-c-4860a7f8-ced1-11e2-b70f-02ee2ddab7fe',
+      uuid: userB
+    });
+
+    // When we hit connect, start the connection
+    connectButton.addEventListener('click', function (event) {
+      pubnubB.subscribe({
+        user: userA,
+        callback: function (message) {
+          responseBox.innerHTML = message + "<br />" + responseBox.innerHTML;
+        }
+      });
+
+      sendButton.disabled = false;
+      inputField.disabled = false;
+      connectButton.disabled = true;
+    });
+
+    // When we hit send, send the message over WebRTC Data Channel
+    sendButton.addEventListener('click', function (event) {
+      if (inputField.value !== '') {
+        pubnubA.publish({
+          user: userB,
+          message: inputField.value
+        });
+      }
+    });
+  </script>
+</body>
+</html>
