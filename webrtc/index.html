@@ -61,14 +61,19 @@
 		</footer>
 	</div></section>
 
-	<section class="slide"><div>
+	<section class="slide" id="capabilities"><div>
 		<h2>Capabilities</h2>
-		<ul>
-			<li>Allows sending of ArrayBuffers, Blobs, and Strings</li>
-			<li>Works in reliable or unreliable modes</li>
-			<li>Reliable works much like TCP, guaranteed order and no packet loss</li>
-			<li>Un-Reliable works much like UDP, no guarantees</li>
-		</ul>
+
+		<div class="next fade-in">
+			<h3>Supports</h3>
+			<div class="highlight" style="margin: 0; padding: 0;">new ArrayBuffer(), new Blob(), new String()</div>
+		</div>
+
+		<div class="next fade-in" style="margin-top: 50px">
+			<h3>Two Modes</h3>
+			<div>Reliable Mode | Guaranteed Order, No Packet Loss (TCP)</div>
+			<div>Unreliable Mode | No Guarantees (UDP)</div>
+		</div>
 
 		<footer>
 			What does this solution look like? Well the best solution is something that can support both unicast and broadcast systems.
@@ -89,17 +94,19 @@
 		<div class="grid6">
 <div class="highlight"><pre><span id="line-1"><span class="kd">var</span> <span class="nx">peerConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RTCPeerConnection</span><span class="p">();</span>
 </span><span id="line-2">
-</span><span id="line-3"><span class="kd">var</span> <span class="nx">dataChannel</span> <span class="o">=</span> <span class="nx">peerConnection</span><span class="p">.</span><span class="nx">createDataChannel</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">);</span>
-</span><span id="line-4">
-</span><span id="line-5"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="line-6">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Channel Error:&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
-</span><span id="line-7"><span class="p">};</span>
-</span><span id="line-8">
-</span><span id="line-9"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="line-10">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got Message:&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-</span><span id="line-11"><span class="p">};</span>
-</span><span id="line-12">
-</span><span id="line-13"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</span><span id="line-3"><span class="kd">var</span> <span class="nx">dataChannel</span> <span class="o">=</span> <span class="nx">peerConnection</span><span class="p">.</span><span class="nx">createDataChannel</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">,</span> <span class="p">{</span> 
+</span><span id="line-4">  <span class="nx">reliable</span><span class="o">:</span> <span class="kc">true</span> 
+</span><span id="line-5"><span class="p">});</span>
+</span><span id="line-6">
+</span><span id="line-7"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-8">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Channel Error:&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+</span><span id="line-9"><span class="p">};</span>
+</span><span id="line-10">
+</span><span id="line-11"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-12">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got Message:&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="line-13"><span class="p">};</span>
+</span><span id="line-14">
+</span><span id="line-15"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
 </span></pre></div>
 		</div>
 
@@ -108,14 +115,26 @@
 		</footer>
 	</div></section>
 
-	<section class="slide" id="devices"><div>
+	<section class="slide" id="ready"><div>
 		<h2>Is it Ready?</h2>
-		<ul>
-			<li>Ready for Chrome and Firefox Today</li>
-			<li>Ready for Android Chrome and Firefox Today</li>
-			<li>Interoperability between browsers still being worked on (but soon!)</li>
-			<li>IE, Safari, and Opera still unknown</li>
-		</ul>
+
+		<div class="next fade-in">
+			<img src="pictures/chrome.png" width="100" height="100" alt="Google Chrome" />
+			<img src="pictures/firefox.png" width="100" height="100" alt="Firefox" />
+			<div style="display: inline-block; padding-left: 20px; width: 70%;">
+				Chrome and Firefox in Android and Desktops <br />
+				No interoperability (Yet!)
+			</div>
+		</div>
+
+		<div style="margin-top: 75px;" class="next fade-in">
+			<img src="pictures/ie9-10.png" width="100" height="100" alt="IE9-10" class="grayscale" />
+			<img src="pictures/safari.png" width="100" height="100" alt="Safari" class="grayscale" />
+			<img src="pictures/opera.png" width="100" height="100" alt="Opera" class="grayscale" />
+			<div style="display: inline-block; padding-left: 20px; padding-bottom: 20px; width: 50%;">
+				IE, Safari, and Opera still unknown
+			</div>
+		</div>
 
 		<footer>
 			

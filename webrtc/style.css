@@ -29,7 +29,7 @@ slideDown
   animation-timing-function: ease;  
   -webkit-animation-timing-function: ease;  
 
-  visibility: visible !important;           
+  visibility: visible !important;
 }
 
 @keyframes slideDown {
@@ -1132,7 +1132,7 @@ body {
 }
 
 body.list {
-  background: #CCC;
+  background: #EEE;
 }
 
 .slide {
@@ -1218,6 +1218,11 @@ video {
   width: auto;
   height: 83%;
 }
+
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 /* end global styles */
 
 /* Progress Background */
@@ -1258,9 +1263,9 @@ video {
   content: '';
 }
 
-/* Devices slide */
-#devices h2 {
-
+/* Ready slide */
+#ready img {
+  vertical-align: bottom;
 }
 
 /* Demo Slide */
