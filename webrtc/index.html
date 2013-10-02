@@ -144,7 +144,10 @@
 	<section class="slide"><div>
 		<h2>Security</h2>
 		<p>
-			The data channel is encrptyed from browser to browser so data cannot be stolen. On the other hand, the biggest threat is your users sending malicious data to another user.
+			All data uses <span>DTLS for security</span>, but speed is the bigger concern so private data should be encrypted
+		</p>
+		<p class="next fade-in">
+			The biggest threat is <span>other users</span> sending malicious data
 		</p>
 
 		<footer>
@@ -153,9 +156,19 @@
 	</div></section>
 
 	<section class="slide" id="scalable"><div>
-		<h2>Other Pitfalls</h2>
-		<p>Not "Serverless". Need other supporting technology.</p>
-		<p>File sizes might be an issue</p>
+		<h2>Other Considerations</h2>
+		<p>
+			<h3>How Do You Do?</h3>
+			<div class="box" style="display: inline-block;">Presence</div>
+			<div class="box" style="display: inline-block;">Analytics</div>
+			<div class="box" style="display: inline-block;">User IDs</div>
+			<div class="box" style="display: inline-block;">Storage</div>
+			<div class="box" style="display: inline-block;">Multicasting</div>
+		</p>
+		<p>
+			<h3>New Levels of Data</h3>
+			Going from <div class="box" style="display: inline-block; width: 20px; height: 20px;"></div> to <div class="box" style="display: inline-block; width: 75px; height: 75px;"></div>
+		</p>
 
 		<footer>
 			
@@ -165,8 +178,8 @@
   <section class="slide"><div>
   	<h2>Great Examples</h2>
   	<ul>
-  		<li>File Sharing - PubShare <a href="http://pubnub.github.io/rtc-pubnub-fileshare/">http://pubnub.github.io/rtc-pubnub-fileshare/</a></li>
-  		<li>Games - Banana Bread <a href="https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/">https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/</a></li>
+  		<li>File Sharing - PubShare <a target="_blank" href="http://pubnub.github.io/rtc-pubnub-fileshare/">http://pubnub.github.io/rtc-pubnub-fileshare/</a></li>
+  		<li>Games - Banana Bread <a target="_blank" href="https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/">https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/</a></li>
   	</ul>
 
   	<footer>
@@ -179,8 +192,21 @@
 	</div></section>
 
 	<section class="slide"><div>
+		<h2>Faster Applications</h2>
+		<ul>
+			<li>Multiplayer Gaming</li>
+			<li>File Sharing</li>
+			<li>Remote Control</li>
+			<li>Second Screens</li>
+			<li>Content Delivery</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
 		<h2>New Age of Computing</h2>
-		<p>Clients can now serve data to other clients. This could not only change the way users interact but also how users interact with the internet.</p>
+		<p>
+			<img src="pictures/webrtc-diagram.png" alt="WebRTC Network" width="540" height="258" style="float: right" /> This could not only change the way users interact but also how users interact with the internet.
+		</p>
 	</div></section>
 
 	<!-- Real-Time Study: http://ambadylab.stanford.edu/pubs/InPress_Freeman_SN.pdf -->
