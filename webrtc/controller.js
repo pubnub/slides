@@ -1,18 +1,31 @@
 (function () {
-  var pubnub = PUBNUB.init({
-    subscribe_key: 'sub-c-4c782460-ced1-11e2-9fea-02ee2ddab7fe'
-  });
+  function initController() {
+    console.log("Connecting controller...");
 
-  pubnub.subscribe({
-    channel: 'slides',
-    callback: function (message) {
-      var data = JSON.parse(message);
+    var pubnub = PUBNUB.init({
+      subscribe_key: 'sub-c-4c782460-ced1-11e2-9fea-02ee2ddab7fe'
+    });
 
-      if (data.command === 'next') {
-        window.shower._turnNextSlide();
-      } else if (data.command === 'previous') {
-        window.shower._turnPreviousSlide();
+    pubnub.subscribe({
+      channel: 'slides',
+      connect: function () {
+        console.log("Controller connected!");
+      },
+      callback: function (message) {
+        var data = JSON.parse(message);
+
+        if (data.command === 'next') {
+          window.shower._turnNextSlide();
+        } else if (data.command === 'previous') {
+          window.shower._turnPreviousSlide();
+        }
       }
+    });
+  };
+
+  document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 67) {
+      initController();
     }
-  })
+  });
 })();
