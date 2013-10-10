@@ -13,6 +13,7 @@
       },
       callback: function (message) {
         var data = JSON.parse(message);
+        console.log("Got message", message);
 
         if (data.command === 'next') {
           window.shower._turnNextSlide();
