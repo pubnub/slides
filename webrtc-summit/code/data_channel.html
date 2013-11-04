@@ -1,0 +1,16 @@
+<div class="highlight"><pre><span id="line-1"><span class="kd">var</span> <span class="nx">peerConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RTCPeerConnection</span><span class="p">();</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="kd">var</span> <span class="nx">dataChannel</span> <span class="o">=</span> <span class="nx">peerConnection</span><span class="p">.</span><span class="nx">createDataChannel</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">,</span> <span class="p">{</span> 
+</span><span id="line-4">  <span class="nx">reliable</span><span class="o">:</span> <span class="kc">true</span> 
+</span><span id="line-5"><span class="p">});</span>
+</span><span id="line-6">
+</span><span id="line-7"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-8">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Channel Error:&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+</span><span id="line-9"><span class="p">};</span>
+</span><span id="line-10">
+</span><span id="line-11"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-12">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got Message:&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="line-13"><span class="p">};</span>
+</span><span id="line-14">
+</span><span id="line-15"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</span></pre></div>
