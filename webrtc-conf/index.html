@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>PubNub Real-Time Network</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="../shower/themes/bright/styles/screen.css" />
+  <link rel="stylesheet" href="../styles/github.css" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>WebRTC Data Channel</h1>
+		<p>Dan Ristic - Developer Evangelist</p>
+	</header>
+
+	<section class="slide cover" id="Cover"><div>
+		<div class="title">
+			<h2>WebRTC Data Channel</h2>
+      <p>High Performance Peer to Peer Data</p>
+      <p>Dan Ristic - Developer Evangelist</p>
+      <p>PubNub</p>
+		</div>
+		<img src="pictures/pubnub-cover.jpg" alt="">
+	</div></section>
+
+	<section class="slide" id="what-is-real-time"><div>
+		<h2>What the Heck is Real-Time?</h2>
+		<img src="pictures/google-earth.jpg" width="400" height="342" alt="Google Earth" />
+		<p class="next expand-up">
+			"But why aren't these <b>live</b> pictures of the earth?"
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>There is Something Fundamental About Real-Time</h2>
+		<div style="float: left; margin-top: 97px; width: 65%;">
+			<h3 class="next fade-in">
+				How long do we have to engage users?
+			</h3>
+		</div>
+		<div style="float: right">
+			<div class="next fade-in box" style="margin-top: 71px; margin-right: 73px; font-size: 40px;">
+				1 minute
+			</div>
+		</div>
+	</div></section>
+
+	<section class="slide" id="real-time-network"><div>
+		<h2 style="margin-top: 50px">The WebRTC Data Channel is a High Performance, Low Latency Connection to Other Browsers</h2>
+		<p>
+
+			<div class="box">Browser A</div>
+			<div id="data-line"></div>
+			<div class="box">Browser B</div>
+
+			<div id="data-packet"></div>
+		</p>
+
+		<footer>
+			We at PubNub want to solve this issue for developers by building the core building blocks for real time applications.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="capabilities"><div>
+		<h2>Capabilities</h2>
+
+		<div class="next fade-in">
+			<h3>Flexible Data Types</h3>
+			<div class="highlight" style="margin: 0; padding: 0;">new ArrayBuffer(), new Blob(), new String()</div>
+		</div>
+
+		<div class="next fade-in" style="margin-top: 50px">
+			<h3>Two Modes</h3>
+			<div>Reliable Mode | Guaranteed Order, No Packet Loss (TCP)</div>
+			<div>Unreliable Mode | No Guarantees (UDP)</div>
+		</div>
+
+		<footer>
+			What does this solution look like? Well the best solution is something that can support both unicast and broadcast systems.
+		</footer>
+	</div></section>
+
+	<section class="slide" id="demo"><div>
+		<h2>Demo</h2>
+		<iframe src="examples/index.html"></iframe>
+
+    <footer>
+    	Let's check out an example of this in action.
+  	</footer>
+  </div></section>
+
+	<section class="slide" id="code"><div>
+		<h2>How Does it Work?</h2>
+		<div class="grid6">
+<div class="highlight"><pre><span id="line-1"><span class="kd">var</span> <span class="nx">peerConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RTCPeerConnection</span><span class="p">();</span>
+</span><span id="line-2">
+</span><span id="line-3"><span class="kd">var</span> <span class="nx">dataChannel</span> <span class="o">=</span> <span class="nx">peerConnection</span><span class="p">.</span><span class="nx">createDataChannel</span><span class="p">(</span><span class="s2">&quot;myLabel&quot;</span><span class="p">,</span> <span class="p">{</span> 
+</span><span id="line-4">  <span class="nx">reliable</span><span class="o">:</span> <span class="kc">true</span> 
+</span><span id="line-5"><span class="p">});</span>
+</span><span id="line-6">
+</span><span id="line-7"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-8">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Channel Error:&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+</span><span id="line-9"><span class="p">};</span>
+</span><span id="line-10">
+</span><span id="line-11"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="line-12">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Got Message:&quot;</span><span class="p">,</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+</span><span id="line-13"><span class="p">};</span>
+</span><span id="line-14">
+</span><span id="line-15"><span class="nx">dataChannel</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+</span></pre></div>
+		</div>
+
+		<footer>
+			And now how is this built on our system? It is simple: pub and sub. We do the rest!
+		</footer>
+	</div></section>
+
+	<section class="slide" id="ready"><div>
+		<h2>Is it Ready?</h2>
+
+		<div class="next fade-in">
+			<img src="pictures/chrome.png" width="100" height="100" alt="Google Chrome" />
+			<img src="pictures/firefox.png" width="100" height="100" alt="Firefox" />
+			<div style="display: inline-block; padding-left: 20px; width: 70%;">
+				Chrome and Firefox in Android and Desktops <br />
+				Interoperability Coming Very Soon
+			</div>
+		</div>
+
+		<div style="margin-top: 75px;" class="next fade-in">
+			<img src="pictures/ie9-10.png" width="100" height="100" alt="IE9-10" class="grayscale" />
+			<img src="pictures/safari.png" width="100" height="100" alt="Safari" class="grayscale" />
+			<img src="pictures/opera.png" width="100" height="100" alt="Opera" class="grayscale" />
+			<div style="display: inline-block; padding-left: 20px; width: 50%;">
+				IE and Safari still unknown <br />
+				Opera in Opera for developers
+			</div>
+		</div>
+
+		<footer>
+			
+		</footer>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Security</h2>
+		<p>
+			All data uses <span>DTLS for security</span>, but speed is the bigger concern so private data should be encrypted
+		</p>
+		<p class="next fade-in">
+			The biggest threat is <span>other users</span> sending malicious data
+		</p>
+
+		<footer>
+			
+		</footer>
+	</div></section>
+
+	<section class="slide" id="scalable"><div>
+		<h2>Other Considerations</h2>
+		<p>
+			<h3>The End of Servers?</h3>
+			<div class="box" style="display: inline-block;">Presence</div>
+			<div class="box" style="display: inline-block;">Analytics</div>
+			<div class="box" style="display: inline-block;">User IDs</div>
+			<div class="box" style="display: inline-block;">Storage</div>
+			<div class="box" style="display: inline-block;">Multicasting</div>
+			<div class="box" style="display: inline-block;">Signaling</div>
+		</p>
+		<p>
+			<h3>New Levels of Data</h3>
+			Going from <div class="box" style="display: inline-block; width: 20px; height: 20px;"></div> to <div class="box" style="display: inline-block; width: 75px; height: 75px;"></div>
+		</p>
+
+		<footer>
+			
+		</footer>
+  </div></section>
+
+  <section class="slide" id="triangle"><div>
+    <h2>Re-Think Development</h2>
+    <img src="../images/signaling.png" width="383" height="351" alt="Signaling Triangle" style="float: right" />
+    <p style="padding-top: 100px;">
+      Utilizing cloud services are a way to present a full featured solution for users
+    </p>
+  </div></section>
+
+  <section class="slide shout" id="skynet"><div>
+  	<h2>What Can We Do?</h2>
+	</div></section>
+
+	<section class="slide"><div>
+    <h2>Better Device to Device Experience</h2>
+    <img src="pictures/device-to-device.png" alt="Device to Device" width="251.384615385" height="380" style="float: left" />
+    <p style="padding-top: 100px">
+      All of your client devices can communicate with each other opening up new ways to interact with your applications.
+    </p>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Faster Applications</h2>
+    <ul>
+			<li>Multiplayer Gaming</li>
+			<li>File Sharing</li>
+			<li>Remote Control</li>
+			<li>Second Screens</li>
+      <li>Content Delivery</li>
+    </ul>
+  </div></section>
+
+	<section class="slide"><div>
+  	<h2>Great Examples</h2>
+  	<ul>
+  		<li>File Sharing - PubShare <a target="_blank" href="http://pubnub.github.io/rtc-pubnub-fileshare/">http://pubnub.github.io/rtc-pubnub-fileshare/</a></li>
+  		<li>Games - Banana Bread <a target="_blank" href="https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/">https://hacks.mozilla.org/2013/03/webrtc-data-channels-for-great-multiplayer/</a></li>
+  		<li>Content Delivery - PeerCDN <a target="_blank" href="https://peercdn.com/">https://peercdn.com/</a></li>
+  	</ul>
+
+  	<footer>
+  		
+  	</footer>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>Real-Time Means More Engagement</h2> 
+  </div></section>
+
+	<section class="slide"><div>
+		<h2>New Age of Computing</h2>
+		<p>
+			<img src="pictures/webrtc-diagram.png" alt="WebRTC Network" width="540" height="258" style="float: right" /> This could not only change the way users interact but also how users interact with the internet.
+		</p>
+	</div></section>
+
+	<!-- Real-Time Study: http://ambadylab.stanford.edu/pubs/InPress_Freeman_SN.pdf -->
+  <section class="slide"><div>
+  	<h2>Questions?</h2>
+  	<ul>
+      <li>Thanks for listening!</li>
+      <li>Find me on the web: <a target="_blank" href="http://danristic.com">http://danristic.com</a> and Twitter: <a target="_blank" href="http://twitter.com/dristic101">@dristic101</a></li>
+      <li>View these slides at: <a target="_blank" href="http://pubnub.github.io/slides/webrtc/">http://pubnub.github.io/slides/webrtc-summit/</a></li>
+      <li>Learn more about PubNub and WebRTC at: <a href="http://github.com/pubnub/webrtc" target="_blank">http://github.com/pubnub/webrtc</a></li>
+  	</ul>
+  </div></section>
+
+	<p class="badge"><a href="https://github.com/pubnub">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="../shower/shower.min.js"></script>
+	<script src="http://cdn.pubnub.com/pubnub-3.5.4.min.js"></script>
+	<script src="../scripts/controller.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+	    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	    e.src='//www.google-analytics.com/analytics.js';
+	    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	    ga('create','UA-41019038-2');ga('send','pageview');
+	</script>
+
+	<!-- Copyright © 2013 PubNub Inc. -->
+</body>
+</html>
