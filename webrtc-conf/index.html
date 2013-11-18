@@ -67,7 +67,7 @@
 		<h2>Capabilities</h2>
 
 		<div class="next fade-in">
-			<h3>Flexible Data Types</h3>
+			<h3>Flexible Data Types for Files, Games, and Speed</h3>
 			<div class="highlight" style="margin: 0; padding: 0;">new ArrayBuffer(), new Blob(), new String()</div>
 		</div>
 
@@ -91,8 +91,12 @@
   	</footer>
   </div></section>
 
+  <section class="slide">
+    <img src="../images/webrtc-network-diagram.png" alt="WebRTC Network Diagram" width="750" height="565.789473684" style="display: block; margin: 0 auto;" />
+  </section>
+
 	<section class="slide" id="code"><div>
-		<h2>How Does it Work?</h2>
+		<h2>Creating A Data Channel</h2>
 		<div class="grid6">
 <div class="highlight"><pre><span id="line-1"><span class="kd">var</span> <span class="nx">peerConnection</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">RTCPeerConnection</span><span class="p">();</span>
 </span><span id="line-2">
@@ -125,7 +129,7 @@
 			<img src="pictures/firefox.png" width="100" height="100" alt="Firefox" />
 			<div style="display: inline-block; padding-left: 20px; width: 70%;">
 				Chrome and Firefox in Android and Desktops <br />
-				Interoperability Coming Very Soon
+				Interoperability Through SCTP
 			</div>
 		</div>
 
@@ -182,8 +186,8 @@
   <section class="slide" id="triangle"><div>
     <h2>Re-Think Development</h2>
     <img src="../images/signaling.png" width="383" height="351" alt="Signaling Triangle" style="float: right" />
-    <p style="padding-top: 100px;">
-      Utilizing cloud services are a way to present a full featured solution for users
+    <p style="padding-top: 80px;">
+      Utilizing cloud services are a way to present a full featured solution for users and provide fallbacks for IE and Safari
     </p>
   </div></section>
 
