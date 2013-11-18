@@ -1527,6 +1527,11 @@ video {
   visibility: visible !important;
 }
 
+/* Slide number hiding */
+.slide.no-number:after {
+  content: ''
+}
+
 /* Slide transitions */
 html {
   background: black;
